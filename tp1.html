@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TP1 - Metodología de la Investigación</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f7f8fc;
+      color: #2c2c34;
+      line-height: 1.75;
+    }
+
+    header {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      text-align: center;
+      padding: 70px 20px 50px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.05rem;
+      opacity: 0.95;
+    }
+
+    nav {
+      background: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #5a36c9;
+      font-weight: 500;
+      padding: 10px 16px;
+      border-radius: 999px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #ece8ff;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    .intro-box {
+      background: white;
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      margin-bottom: 35px;
+      border-left: 8px solid #6a11cb;
+    }
+
+    .intro-box h2 {
+      color: #3b2b73;
+      margin-bottom: 12px;
+    }
+
+    section {
+      margin-bottom: 35px;
+    }
+
+    .section-card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .section-card h2 {
+      color: #3b2b73;
+      margin-bottom: 18px;
+      font-size: 2rem;
+    }
+
+    .section-card h3 {
+      color: #4b3b8f;
+      margin-top: 22px;
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    .section-card h4 {
+      color: #2f5eb8;
+      margin-top: 18px;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .section-card p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+
+    .section-card ul {
+      margin: 10px 0 16px 22px;
+    }
+
+    .section-card li {
+      margin-bottom: 8px;
+    }
+
+    .subcard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .subcard {
+      background: #f7f5ff;
+      border: 1px solid #e3ddff;
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .subcard h3 {
+      margin-top: 0;
+      color: #472ea1;
+    }
+
+    .tabla-box {
+      overflow-x: auto;
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      min-width: 700px;
+    }
+
+    th, td {
+      padding: 14px;
+      border: 1px solid #dcdcec;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #5b3cc4;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f8f7fd;
+    }
+
+    .mapa-placeholder {
+      margin-top: 20px;
+      padding: 35px 20px;
+      border: 2px dashed #8f7ae6;
+      border-radius: 16px;
+      background: #f8f6ff;
+      text-align: center;
+      color: #5a4d92;
+    }
+
+    .destacado {
+      background: linear-gradient(135deg, #eef4ff 0%, #f5f0ff 100%);
+      border-left: 6px solid #4d8df7;
+      padding: 18px 20px;
+      border-radius: 14px;
+      margin: 18px 0;
+    }
+
+    .mini-cierre {
+      background: #f4f9ff;
+      padding: 18px 20px;
+      border-radius: 14px;
+      border-left: 6px solid #2575fc;
+      margin-top: 18px;
+    }
+
+    .volver {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      background: #5b3cc4;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #472ea1;
+    }
+
+    footer {
+      background: #23263b;
+      color: white;
+      text-align: center;
+      padding: 18px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .section-card {
+        padding: 22px;
+      }
+
+      .section-card h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Trabajo Práctico 1</h1>
+    <p>Metodología de la Investigación</p>
+    <p>Impacto del uso del celular en el aprendizaje y en la atención de los estudiantes dentro del aula</p>
+  </header>
+
+  <nav>
+    <a href="#actividad1">Actividad 1</a>
+    <a href="#actividad2">Actividad 2</a>
+    <a href="#actividad3">Actividad 3</a>
+    <a href="#cierre">Cierre</a>
+  </nav>
+
+  <main>
+
+    <div class="intro-box">
+      <h2>Presentación del trabajo</h2>
+      <p>
+        Este trabajo práctico aborda un problema educativo actual: el uso del celular dentro del aula.
+        A partir de este tema, se desarrollan tres actividades orientadas a pensar diferentes enfoques metodológicos,
+        los debates epistemológicos en educación y las críticas clásicas al método en relación con la práctica docente.
+      </p>
+    </div>
+
+    <section id="actividad1">
+      <div class="section-card">
+        <h2>Actividad 1: Tres miradas a un mismo problema educativo</h2>
+
+        <p>
+          En esta actividad se trabaja sobre un mismo problema educativo desde tres enfoques metodológicos distintos.
+          El problema elegido es: <strong>efectos de la restricción del uso del celular sobre la atención y la participación en clase</strong>.
+        </p>
+
+        <h3>Delimitación pedagógica del problema</h3>
+        <p>
+          El problema se sitúa en el campo educativo y pedagógico porque no interesa solamente saber si el celular “molesta” o “distrae”,
+          sino comprender cómo su restricción impacta en los procesos de atención, participación e implicación del alumno en la clase.
+          El foco está puesto en el estudiante como sujeto pedagógico: cómo se posiciona frente a la propuesta de enseñanza, cómo participa,
+          cómo sostiene la atención y cómo se vincula con la tarea escolar.
+        </p>
+        <p>
+          Desde esta perspectiva, el problema no se reduce al dispositivo en sí, sino a su incidencia en la experiencia de aprendizaje dentro del aula.
+        </p>
+
+        <div class="subcard-grid">
+
+          <div class="subcard">
+            <h3>1. Aproximación experimental</h3>
+
+            <h4>Cómo se investigaría este problema</h4>
+            <p>
+              Desde la aproximación experimental, el objetivo sería analizar si la restricción del uso del celular produce cambios observables
+              en la atención y la participación de los alumnos durante la clase. Esta mirada se apoya en la lógica de control de variables
+              y relación causa-efecto, vinculada con la aproximación experimental de tipo galileana.
+            </p>
+
+            <p>El diseño podría organizarse del siguiente modo:</p>
+            <ul>
+              <li>se seleccionan dos grupos de alumnos de características semejantes;</li>
+              <li>en uno de los grupos se implementa una consigna de restricción del uso del celular durante un período breve de clases;</li>
+              <li>en el otro grupo se mantiene la dinámica habitual;</li>
+              <li>luego se comparan los comportamientos de los estudiantes.</li>
+            </ul>
+
+            <h4>Aspectos a observar</h4>
+            <ul>
+              <li>la atención sostenida;</li>
+              <li>la participación oral;</li>
+              <li>la realización de tareas;</li>
+              <li>la concentración en actividades propuestas por el docente.</li>
+            </ul>
+
+            <h4>Objeto de estudio</h4>
+            <p>
+              El objeto no es el celular en sí mismo, sino los efectos pedagógicos de su restricción sobre la atención y la participación del alumno.
+            </p>
+
+            <h4>Variables</h4>
+            <ul>
+              <li><strong>Variable independiente:</strong> restricción del uso del celular.</li>
+              <li><strong>Variables dependientes:</strong> atención en clase, participación e involucramiento en la tarea.</li>
+            </ul>
+
+            <h4>Técnicas posibles</h4>
+            <ul>
+              <li>observación sistemática de clases;</li>
+              <li>grillas de registro de participación;</li>
+              <li>comparación de tareas realizadas;</li>
+              <li>notas del docente sobre interrupciones, dispersión y respuesta de los alumnos.</li>
+            </ul>
+
+            <h4>Ventajas</h4>
+            <p>
+              Este enfoque permite observar de forma más precisa si una decisión pedagógica concreta produce ciertos efectos.
+              Ayuda a organizar la observación y a focalizar en cambios visibles en la conducta escolar del alumno.
+            </p>
+
+            <h4>Desventajas y límites</h4>
+            <p>
+              Su mayor límite es la artificialidad, porque el aula no puede controlarse como un laboratorio. Además, la atención y la participación
+              dependen de múltiples factores: interés por el contenido, vínculo con el docente, clima grupal, cansancio y motivación.
+              Por eso, aunque se busque una relación causa-efecto, en educación nunca puede afirmarse de forma completamente cerrada.
+            </p>
+          </div>
+
+          <div class="subcard">
+            <h3>2. Método de la asociación</h3>
+
+            <h4>Cómo se investigaría este problema</h4>
+            <p>
+              Desde el método de la asociación, no se intenta intervenir directamente para producir un efecto, sino observar si existe una relación
+              entre la restricción del uso del celular y ciertos comportamientos escolares de los alumnos. Esta perspectiva trabaja con variables
+              y con la posibilidad de encontrar regularidades entre propiedades, en línea con lo que el capítulo 1 llama matriz de datos y supuesto atomista.
+            </p>
+
+            <p>Se podría trabajar con varios alumnos o cursos y registrar:</p>
+            <ul>
+              <li>frecuencia de uso del celular en clase;</li>
+              <li>grado de restricción del uso del celular;</li>
+              <li>niveles de participación;</li>
+              <li>tiempos de atención;</li>
+              <li>cantidad de tareas terminadas;</li>
+              <li>intervenciones en clase.</li>
+            </ul>
+
+            <div class="destacado">
+              <p>
+                La pregunta central no sería tanto “qué efecto causa” la restricción, sino:
+                <strong>¿existe asociación entre mayor restricción del celular y mayores niveles de atención y participación del alumno?</strong>
+              </p>
+            </div>
+
+            <h4>Objeto de estudio</h4>
+            <p>
+              El objeto de estudio es la relación entre el grado de restricción del uso del celular y las formas de atención y participación de los alumnos.
+            </p>
+
+            <h4>Cómo se aplicaría pedagógicamente</h4>
+            <p>Podrían compararse:</p>
+            <ul>
+              <li>alumnos en clases con uso restringido;</li>
+              <li>alumnos en clases con uso flexible;</li>
+              <li>distintos momentos de una misma clase según el nivel de control del celular.</li>
+            </ul>
+
+            <p>El interés estaría en construir datos que permitan ver tendencias:</p>
+            <ul>
+              <li>si cuando hay mayor restricción aumenta la participación;</li>
+              <li>si cuando el uso es libre crecen las distracciones;</li>
+              <li>si ciertos estudiantes se benefician más que otros.</li>
+            </ul>
+
+            <h4>Técnicas posibles</h4>
+            <ul>
+              <li>encuestas breves;</li>
+              <li>observación estructurada;</li>
+              <li>cuadros comparativos;</li>
+              <li>análisis de registros de clase;</li>
+              <li>escalas de participación y atención.</li>
+            </ul>
+
+            <h4>Ventajas</h4>
+            <p>
+              Tiene mayor viabilidad en la escuela real, porque no exige un control total de la situación.
+              Permite trabajar con varios alumnos y encontrar tendencias generales.
+            </p>
+
+            <h4>Desventajas y límites</h4>
+            <p>
+              No permite afirmar causalidad de manera estricta. Que dos fenómenos estén asociados no significa necesariamente que uno cause al otro.
+              Además, al trabajar con variables separadas, puede dejar de lado la riqueza del contexto y la singularidad de la experiencia de los alumnos.
+            </p>
+          </div>
+
+          <div class="subcard">
+            <h3>3. Enfoque no estándar</h3>
+
+            <h4>Cómo se investigaría este problema</h4>
+            <p>
+              Desde el enfoque no estándar, la preocupación no estaría centrada en medir o controlar variables, sino en comprender cómo viven los alumnos
+              la restricción del uso del celular y qué efectos pedagógicos produce en su experiencia de clase. Este enfoque se entiende como contextual,
+              idiográfico y orientado a la comprensión global.
+            </p>
+
+            <h4>Preguntas posibles</h4>
+            <ul>
+              <li>¿Cómo interpretan los alumnos la prohibición o restricción del celular?</li>
+              <li>¿La viven como ayuda, control, castigo o acompañamiento?</li>
+              <li>¿Qué cambia en su forma de participar?</li>
+              <li>¿Cómo se modifica su vínculo con la clase cuando no tienen el celular a disposición?</li>
+            </ul>
+
+            <p>
+              Este enfoque permite mirar al alumno no solo como portador de conductas observables, sino como sujeto que otorga sentido a lo que ocurre en el aula.
+            </p>
+
+            <h4>Objeto de estudio</h4>
+            <p>
+              El objeto de estudio es la experiencia escolar del alumno frente a la restricción del uso del celular, en relación con su atención,
+              participación y vínculo con la propuesta pedagógica.
+            </p>
+
+            <h4>Cómo se aplicaría pedagógicamente</h4>
+            <p>Se podría elegir un curso y trabajar en profundidad con:</p>
+            <ul>
+              <li>observación participante;</li>
+              <li>entrevistas a alumnos;</li>
+              <li>conversaciones grupales;</li>
+              <li>registro de escenas significativas;</li>
+              <li>entrevistas al docente sobre cambios percibidos en la dinámica del aula.</li>
+            </ul>
+
+            <p>Interesa comprender:</p>
+            <ul>
+              <li>si la restricción mejora la concentración;</li>
+              <li>si genera resistencia;</li>
+              <li>si algunos alumnos participan más;</li>
+              <li>si otros se sienten más desmotivados;</li>
+              <li>cómo esas reacciones se relacionan con la propuesta de enseñanza.</li>
+            </ul>
+
+            <h4>Técnicas posibles</h4>
+            <ul>
+              <li>entrevistas abiertas;</li>
+              <li>observación participante;</li>
+              <li>notas de campo;</li>
+              <li>relatos de experiencia;</li>
+              <li>análisis interpretativo de situaciones áulicas.</li>
+            </ul>
+
+            <h4>Ventajas</h4>
+            <p>
+              Aporta más profundidad y más riqueza pedagógica. Permite comprender la experiencia de los alumnos en contexto
+              y recuperar sus voces. Es especialmente valioso si lo que se busca es entender el fenómeno más allá de los datos visibles.
+            </p>
+
+            <h4>Desventajas y límites</h4>
+            <p>
+              Tiene menos alcance para generalizar. Además, exige más tiempo, más interpretación y un trabajo de campo más fino.
+              Sus resultados son más situados y menos extrapolables.
+            </p>
+          </div>
+
+        </div>
+
+        <h3>Cuadro comparativo corregido</h3>
+        <div class="tabla-box">
+          <table>
+            <thead>
+              <tr>
+                <th>Enfoque</th>
+                <th>Cómo aborda el problema</th>
+                <th>Objeto centrado en el alumno</th>
+                <th>Ventajas</th>
+                <th>Desventajas / límites</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Aproximación experimental</td>
+                <td>Busca ver si la restricción del celular produce cambios en atención y participación.</td>
+                <td>El alumno es observado en sus respuestas ante una condición pedagógica modificada.</td>
+                <td>Permite ver efectos concretos y ordenar la observación.</td>
+                <td>Artificialidad, escaso control real del aula y simplificación.</td>
+              </tr>
+              <tr>
+                <td>Método de la asociación</td>
+                <td>Busca relaciones entre restricción del celular y conductas escolares.</td>
+                <td>El alumno aparece como unidad de análisis a partir de variables observables.</td>
+                <td>Permite trabajar con varios casos y hallar tendencias.</td>
+                <td>No demuestra causalidad y puede perder contexto.</td>
+              </tr>
+              <tr>
+                <td>Enfoque no estándar</td>
+                <td>Busca comprender cómo viven los alumnos la restricción y cómo impacta en su experiencia escolar.</td>
+                <td>El alumno es sujeto de sentido y experiencia pedagógica.</td>
+                <td>Profundidad, comprensión contextual y riqueza interpretativa.</td>
+                <td>Menor generalización, más tiempo y análisis.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Reflexión: ¿qué enfoque sería más adecuado?</h3>
+        <div class="destacado">
+          <p>
+            Si pensamos este problema desde una perspectiva pedagógica y con foco en el alumno, el enfoque que parece más adecuado
+            es el <strong>no estándar</strong>, porque permite comprender no solo si la restricción del celular modifica la atención
+            y la participación, sino también cómo y por qué lo hace en la experiencia concreta de los estudiantes.
+            En educación, muchas veces no alcanza con registrar conductas; también es necesario interpretar sentidos, vínculos
+            y modos de habitar la clase.
+          </p>
+        </div>
+
+        <div class="mini-cierre">
+          <p>
+            Sin embargo, los tres enfoques pueden aportar algo distinto: el experimental ayuda a observar efectos puntuales;
+            el de la asociación permite encontrar tendencias; y el no estándar ofrece comprensión profunda del fenómeno en contexto.
+            Por eso, como futuras docentes, podríamos sostener que el enfoque no estándar es el más pertinente para comprender
+            pedagógicamente el problema, aunque complementarlo con elementos de asociación podría enriquecer la investigación.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="actividad2">
+      <div class="section-card">
+        <h2>Actividad 2: Mapa de los debates en educación</h2>
+
+        <p>
+          El capítulo 2 de Marradi, Archenti y Piovani muestra que en las ciencias sociales no existe una única manera de producir conocimiento,
+          sino que se fueron configurando debates metodológicos entre distintas perspectivas. En educación, esos debates influyen directamente
+          en cómo se investiga la escuela, cómo se evalúa, cómo se interpreta la experiencia de los sujetos y qué se considera conocimiento válido.
+        </p>
+
+        <h3>Idea central del mapa</h3>
+        <p><strong>Debates metodológicos en educación</strong></p>
+
+        <h3>Ejes principales</h3>
+        <ul>
+          <li>Positivismo clásico</li>
+          <li>Críticas intrapositivistas</li>
+          <li>Enfoques no estándar</li>
+          <li>Aplicaciones en educación</li>
+        </ul>
+
+        <h3>Positivismo clásico</h3>
+        <p>
+          Parte de la idea de que la realidad social puede estudiarse con criterios semejantes a los de las ciencias naturales.
+          Busca un conocimiento objetivo, generalizable, basado en observación, medición y regularidades. Durkheim aparece como autor clave,
+          defendiendo el estudio de los hechos sociales como cosas.
+        </p>
+
+        <h3>Críticas intrapositivistas</h3>
+        <h4>Thomas Kuhn</h4>
+        <p>
+          Cuestiona la idea de que la ciencia avance linealmente y propone la noción de paradigma. Esto permite pensar que en educación
+          tampoco hay un único modelo válido para siempre.
+        </p>
+
+        <h4>Imre Lakatos</h4>
+        <p>
+          Propone la idea de programas de investigación con un núcleo duro y hipótesis auxiliares, mostrando que las teorías no se abandonan
+          automáticamente ante una sola refutación.
+        </p>
+
+        <h3>Enfoques no estándar</h3>
+        <ul>
+          <li><strong>Hermenéutica:</strong> interpretación de sentidos.</li>
+          <li><strong>Fenomenología:</strong> experiencia vivida de los sujetos.</li>
+          <li><strong>Interaccionismo simbólico:</strong> construcción social en la interacción cotidiana.</li>
+          <li><strong>Teoría crítica feminista:</strong> cuestionamiento a la supuesta neutralidad del conocimiento.</li>
+        </ul>
+
+        <h3>Aplicaciones concretas en educación</h3>
+        <ul>
+          <li><strong>Survey research:</strong> evaluaciones masivas y medición de variables.</li>
+          <li><strong>Etnografía escolar:</strong> observación participante y comprensión del contexto.</li>
+          <li><strong>Investigación-acción:</strong> reflexión y transformación de la práctica docente.</li>
+        </ul>
+
+        <div class="mapa-placeholder">
+  <img src="cuadro1.jpg" alt="Mapa conceptual actividad 2" style="max-width:100%; border-radius:12px;">
+</div>
+        </div>
+
+        <div class="mini-cierre">
+          <p>
+            Los debates metodológicos en educación muestran que no existe una sola forma legítima de investigar la realidad escolar.
+            Cada enfoque produce una manera diferente de entender la ciencia, el conocimiento y la práctica educativa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="actividad3">
+      <div class="section-card">
+        <h2>Actividad 3: Críticas clásicas al método: ¿sirven para la educación?</h2>
+
+        <p>
+          Las críticas clásicas al método conservan plena vigencia cuando se las piensa en relación con la educación actual.
+          Marradi, Archenti y Piovani cuestionan la idea de un método concebido como secuencia rígida, universal, lineal y aplicable
+          de manera uniforme a toda investigación. En lugar de aceptar una imagen cerrada del método, muestran sus límites
+          frente a la complejidad de los contextos sociales. 
+        </p>
+
+        <h3>Rigidez</h3>
+        <p>
+          La idea de que existe un camino fijo y correcto para proceder recuerda ciertas prácticas pedagógicas donde la planificación
+          o el diseño curricular se interpretan como secuencias cerradas. En esos casos, el riesgo es transformar la enseñanza en
+          una aplicación burocrática, dejando poco lugar para la singularidad del grupo y los emergentes del aula.
+        </p>
+
+        <h3>Linealidad</h3>
+        <p>
+          En la visión clásica, el método aparece como una sucesión ordenada de pasos. Sin embargo, en la práctica educativa esto rara vez
+          ocurre así. Los estudiantes vuelven sobre contenidos, interrumpen, resignifican, olvidan, preguntan y conectan con experiencias previas.
+          Aprender no es avanzar por escalones idénticos, sino transitar recorridos heterogéneos.
+        </p>
+
+        <h3>Pretensión de universalidad</h3>
+        <p>
+          El método clásico supone que lo válido en un contexto puede trasladarse sin más a cualquier otro. En educación, esto se hace visible
+          cuando se implementan propuestas generales sin atender diferencias territoriales, institucionales o socioculturales.
+        </p>
+
+        <h3>Método, metodología y técnica</h3>
+        <p>
+          Un docente no debería reducir la metodología a una simple elección de técnicas, ni identificar el método con una secuencia inflexible.
+          Diseñar una clase implica articular propósitos, supuestos sobre el aprendizaje, condiciones institucionales, contenidos, recursos y estrategias.
+        </p>
+
+        <div class="destacado">
+          <p>
+            La tensión entre método y metodología no se resuelve eligiendo uno contra otro, sino articulándolos de manera flexible:
+            la metodología aporta el marco de sentido, el método organiza la acción y la experiencia concreta obliga a reajustar ambas dimensiones.
+          </p>
+        </div>
+
+        <h3>Conclusión</h3>
+        <p>
+          Las críticas clásicas al método siguen siendo útiles para pensar la educación actual. La rigidez, la linealidad y la pretensión
+          de universalidad continúan apareciendo en muchas propuestas pedagógicas contemporáneas cuando se transforman en fórmulas cerradas
+          o mandatos homogéneos. Frente a eso, la educación requiere una mirada metodológica más reflexiva, capaz de reconocer la complejidad
+          de la práctica, la diversidad de los contextos y el carácter situado del conocimiento pedagógico.
+        </p>
+
+        <div class="mini-cierre" id="cierre">
+          <p>
+            Como futuros docentes, asumir estas críticas no implica renunciar al método, sino usarlo de forma más crítica, flexible y coherente
+            con la realidad concreta del aula.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="volver">
+      <a href="base.html" class="btn">Volver al inicio</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Metodología de la Investigación · Trabajo Práctico 1</p>
+  </footer>
+
+</body>
+</html>
