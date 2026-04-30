@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metodología de la Investigación</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f6f7fb;
+      color: #2b2b2b;
+      line-height: 1.6;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #5b3cc4 0%, #2d9cdb 100%);
+      color: white;
+      text-align: center;
+      padding: 80px 20px 60px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      opacity: 0.95;
+    }
+
+    .autor {
+      font-size: 0.98rem;
+      font-weight: 300;
+      margin-top: 10px;
+    }
+
+    .nav {
+      background: white;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding: 16px 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #5b3cc4;
+      font-weight: 500;
+      padding: 10px 16px;
+      border-radius: 999px;
+      transition: 0.3s ease;
+    }
+
+    .nav a:hover {
+      background: #ece8ff;
+      color: #3f2890;
+    }
+
+    .seccion {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .seccion h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #2f2f5f;
+      margin-bottom: 15px;
+    }
+
+    .seccion p.intro {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 35px;
+      color: #5a5a72;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 6px solid #5b3cc4;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    }
+
+    .card h3 {
+      color: #2f2f5f;
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      color: #5d5d6f;
+      margin-bottom: 18px;
+      font-size: 0.97rem;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      background: #5b3cc4;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 500;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #472ea1;
+    }
+
+    .disabled {
+      display: inline-block;
+      background: #ececf3;
+      color: #777;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+
+    .reflexion-box {
+      background: white;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    footer {
+      background: #22253a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .seccion {
+        padding: 45px 16px;
+      }
+
+      .seccion h2 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <h1>Metodología de la Investigación</h1>
+    <p>Portafolio académico digital</p>
+    <p>Construcción progresiva de los trabajos prácticos y del recorrido anual</p>
+    <p class="autor">Veliz Evelyn Daniela - Villacorta Maria Laura</p>
+  </header>
+
+  <nav class="nav">
+    <a href="#inicio">Inicio</a>
+    <a href="#trabajos">Trabajos Prácticos</a>
+    <a href="#biblioteca">Biblioteca</a>
+    <a href="#reflexion">Reflexión Final</a>
+  </nav>
+
+  <section id="inicio" class="seccion">
+    <h2>Presentación</h2>
+    <p class="intro">
+      Este sitio web fue pensado como un espacio de organización, desarrollo y presentación de los trabajos prácticos de la materia Metodología de la Investigación. Su construcción será progresiva durante el año, hasta conformar una producción final integral.
+    </p>
+  </section>
+
+  <section id="trabajos" class="seccion">
+    <h2>Trabajos Prácticos</h2>
+    <p class="intro">
+      Aquí se irán incorporando los trabajos desarrollados a lo largo de la cursada, organizados de manera clara y accesible.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Trabajo Práctico 1</h3>
+        <p>Introducción a los enfoques, conceptos iniciales y primeros ejes de análisis de la materia.</p>
+<a href="tp1.html" class="btn">Ver trabajo</a>
+      </div>
+
+      <div class="card">
+        <h3>Trabajo Práctico 2</h3>
+        <p>Espacio reservado para el próximo trabajo práctico que se integrará al recorrido anual.</p>
+        <span class="disabled">Próximamente</span>
+      </div>
+
+      <div class="card">
+        <h3>Trabajo Práctico 3</h3>
+        <p>Sección prevista para continuar ampliando el contenido de la materia a lo largo del ciclo lectivo.</p>
+        <span class="disabled">Próximamente</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="biblioteca" class="seccion">
+    <h2>Biblioteca y materiales</h2>
+    <p class="intro">
+      En este espacio podrán incorporarse textos teóricos, bibliografía obligatoria, recursos complementarios y materiales de consulta.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Bibliografía de la materia</h3>
+        <p>Sección destinada a organizar textos, apuntes, PDFs, documentos o enlaces de lectura.</p>
+<a href="bibliografia.html" class="btn">Abrir biblioteca</a>
+      </div>
+
+      <div class="card">
+        <h3>Recursos complementarios</h3>
+        <p>Espacio para videos, presentaciones, esquemas, mapas conceptuales o materiales de apoyo.</p>
+        <span class="disabled">En construcción</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="reflexion" class="seccion">
+    <h2>Reflexión Final</h2>
+    <div class="reflexion-box">
+      <p>
+        Al finalizar el recorrido anual, este apartado reunirá una síntesis de aprendizajes, reflexiones personales y una articulación general del trayecto realizado en la materia. La intención es que este sitio no solo funcione como archivo de trabajos, sino también como una producción  significativa para la instancia final.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Metodología de la Investigación · Portafolio académico 2026</p>
+  </footer>
+
+</body>
+</html>
